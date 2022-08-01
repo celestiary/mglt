@@ -1,0 +1,20 @@
+{
+  "name": "mglt",
+  "version": "1.0.0",
+  "description": "'Calculator for the Multiple Gravitational Lens Telescope'",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf docs",
+    "build": "yarn clean && yarn build-docs && yarn build-app",
+    "build-docs": "mkdir docs && cp -r html/* docs",
+    "build-app": "esbuild --outfile=docs/index.js --bundle js/index.jsx",
+    "serve": "esbuild --outfile=docs/index.js --servedir=docs --bundle js/index.jsx --sourcemap --serve=localhost:8080"
+  },
+  "repository": "https://github.com/celestiary/mglt",
+  "author": "Pablo Mayrgundter <pablo.mayrgundter@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
