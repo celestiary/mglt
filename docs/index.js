@@ -22611,49 +22611,48 @@
     }
   });
 
-  // src/index.jsx
+  // js/index.jsx
   var import_react2 = __toModule(require_react());
-  var import_react_dom2 = __toModule(require_react_dom());
-
-  // src/GltCalc.jsx
-  var import_react = __toModule(require_react());
   var import_react_dom = __toModule(require_react_dom());
+
+  // js/GltCalc.jsx
+  var import_react = __toModule(require_react());
   function GltCalc() {
-    const [solarRadius, setSolarRadius] = (0, import_react_dom.useState)(694248e3);
-    const [focusDistance, setFocusDistance] = (0, import_react_dom.useState)(500496e8);
-    const [theta, setTheta] = (0, import_react_dom.useState)(1.75);
-    const [out1, setOut1] = (0, import_react_dom.useState)(null);
-    const [out2, setOut2] = (0, import_react_dom.useState)(null);
+    const [solarRadius, setSolarRadius] = (0, import_react.useState)(694248e3);
+    const [focusDistance, setFocusDistance] = (0, import_react.useState)(500496e8);
+    const [theta, setTheta] = (0, import_react.useState)(1.75 * 1 / 36e3);
+    const [out1, setOut1] = (0, import_react.useState)(null);
+    const [out2, setOut2] = (0, import_react.useState)(null);
     function doCalc() {
       setOut1(Math.tan(theta));
       setOut2(solarRadius / focusDistance);
     }
-    return /* @__PURE__ */ React.createElement("table", {
+    return /* @__PURE__ */ import_react.default.createElement("table", {
       summary: "variables"
-    }, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", null, "Solar Radius (R)"), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("input", {
+    }, /* @__PURE__ */ import_react.default.createElement("tbody", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Solar Radius! (R)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "sr",
-      value: solarRadius
-    }), " meters")), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", null, "Focus Distance (FD)"), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("input", {
+      defaultValue: solarRadius
+    }), " meters")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Focus Distance (FD)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "fd",
-      value: focusDistance
-    }), " meters (500 AU)")), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", null, "\u0398", /* @__PURE__ */ React.createElement("sub", null, "1")), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("input", {
+      defaultValue: focusDistance
+    }), " meters (500 AU)")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "\u0398", /* @__PURE__ */ import_react.default.createElement("sub", null, "1")), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "theta",
-      value: theta
-    }), " arcseconds")), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", null, "tan(\u0398)"), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("input", {
+      defaultValue: theta
+    }), " arcseconds")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "tan(\u0398)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "out1",
-      value: out1
-    }))), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", null, "computed"), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("input", {
+      defaultValue: out1
+    }))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "computed"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "out2",
-      value: out2
-    }))), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", {
-      colspan: "2"
-    }, /* @__PURE__ */ React.createElement("button", {
-      onclick: doCalc
-    }, "To The Stars!"))));
+      defaultValue: out2
+    }))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", {
+      colSpan: "2"
+    }, /* @__PURE__ */ import_react.default.createElement("button", {
+      onClick: doCalc
+    }, "To The Stars!")))));
   }
 
-  // src/index.jsx
-  (0, import_react_dom2.render)(/* @__PURE__ */ import_react2.default.createElement(GltCalc, null), document.getElementById("root"));
+  // js/index.jsx
+  (0, import_react_dom.render)(/* @__PURE__ */ import_react2.default.createElement(GltCalc, null), document.getElementById("root"));
 })();
 /**
  * @license React
