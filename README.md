@@ -13,3 +13,6 @@ This project is hosted alongside Celestiary in order to use the local 100k star 
 The Sun has a lens difraction of 1.73 arcseconds, which yields a focal length of 548-900 AU.  This geometry determines the useful focal orbit for the SGLT.  Similarly, some objects happen to have a [gravitational lense](https://en.wikipedia.org/wiki/Gravitational_lens) that is already useful from Earth.
 
 A Multi-Gravitational Lense Telescope would combine the lensing from multiple objects to form a synthetic aperature.  So the task is to search for combinations of lenses that focus at a point somewhere in our Solar System.
+
+### Calculator
+The code in this repo is currently used for a WIP calculator at https://celestiary.github.io/mglt/
