@@ -997,7 +997,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState2(initialState) {
+          function useState(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1009,7 +1009,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1789,7 +1789,7 @@
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect2;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1797,7 +1797,7 @@
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState2;
+          exports.useState = useState;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -22618,37 +22618,47 @@
   // js/GltCalc.jsx
   var import_react = __toModule(require_react());
   function GltCalc() {
-    const [solarRadius, setSolarRadius] = (0, import_react.useState)(694248e3);
-    const [focusDistance, setFocusDistance] = (0, import_react.useState)(500496e8);
-    const [theta, setTheta] = (0, import_react.useState)(1.75 * 1 / 36e3);
-    const [out1, setOut1] = (0, import_react.useState)(null);
-    const [out2, setOut2] = (0, import_react.useState)(null);
     function doCalc() {
-      setOut1(Math.tan(theta));
-      setOut2(solarRadius / focusDistance);
+      const v1 = Math.tan(parseFloat(this.theta.value) * 1 / 36e3);
+      const v2 = parseFloat(this.solarRadius.value) / parseFloat(this.focusDistance.value);
+      this.out1.value = v1;
+      this.out2.value = v2;
     }
+    (0, import_react.useEffect)(() => {
+      doCalc();
+    }, []);
     return /* @__PURE__ */ import_react.default.createElement("table", {
       summary: "variables"
-    }, /* @__PURE__ */ import_react.default.createElement("tbody", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Solar Radius! (R)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
-      id: "sr",
-      defaultValue: solarRadius
-    }), " meters")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Focus Distance (FD)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
-      id: "fd",
-      defaultValue: focusDistance
+    }, /* @__PURE__ */ import_react.default.createElement("tbody", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Solar Radius (R", /* @__PURE__ */ import_react.default.createElement("sub", null, "O"), ", radius of lensing star)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
+      id: "solarRadius",
+      type: "number",
+      step: "1000000000",
+      defaultValue: 694248e3,
+      onChange: doCalc
+    }), " meters")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Focus Distance (D", /* @__PURE__ */ import_react.default.createElement("sub", null, "L"), ")"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
+      id: "focusDistance",
+      type: "number",
+      step: "1000000000000",
+      defaultValue: 500496e8,
+      onChange: doCalc
     }), " meters (500 AU)")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "\u0398", /* @__PURE__ */ import_react.default.createElement("sub", null, "1")), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "theta",
-      defaultValue: theta
+      type: "number",
+      defaultValue: 1.75,
+      onChange: doCalc
     }), " arcseconds")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "tan(\u0398)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "out1",
-      defaultValue: out1
-    }))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "computed"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
+      value: this.out1,
+      readOnly: true
+    }))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "computed (solarRadius / focusDistance)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "out2",
-      defaultValue: out2
+      value: this.out2,
+      readOnly: true
     }))), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", {
       colSpan: "2"
     }, /* @__PURE__ */ import_react.default.createElement("button", {
       onClick: doCalc
-    }, "To The Stars!")))));
+    }, "Focus!")))));
   }
 
   // js/index.jsx
