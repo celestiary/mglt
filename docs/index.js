@@ -22635,18 +22635,18 @@
       step: "1000000000",
       defaultValue: 694248e3,
       onChange: doCalc
-    }), " meters")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Focus Distance (D", /* @__PURE__ */ import_react.default.createElement("sub", null, "L"), ")"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
+    }), " meters (e.g. Sun's radius)")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Focus Distance (D", /* @__PURE__ */ import_react.default.createElement("sub", null, "L"), ")"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "focusDistance",
       type: "number",
       step: "1000000000000",
       defaultValue: 500496e8,
       onChange: doCalc
-    }), " meters (500 AU)")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "\u0398", /* @__PURE__ */ import_react.default.createElement("sub", null, "1")), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
+    }), " meters (e.g. 500 AU)")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Deflection (\u0398", /* @__PURE__ */ import_react.default.createElement("sub", null, "1"), ")"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "theta",
       type: "number",
       defaultValue: 1.75,
       onChange: doCalc
-    }), " arcseconds")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "tan(\u0398)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
+    }), " arcseconds (Sun's deflection)")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "tan(\u0398)"), /* @__PURE__ */ import_react.default.createElement("td", null, /* @__PURE__ */ import_react.default.createElement("input", {
       id: "out1",
       value: this.out1,
       readOnly: true

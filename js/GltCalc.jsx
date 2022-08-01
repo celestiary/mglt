@@ -25,7 +25,7 @@ export default function GltCalc() {
                 type="number"
                 step="1000000000"
                 defaultValue={694248000}
-                onChange={doCalc}/> meters</td>
+                onChange={doCalc}/> meters (e.g. Sun's radius)</td>
         </tr>
         <tr>
           <td>Focus Distance (D<sub>L</sub>)</td>
@@ -34,15 +34,15 @@ export default function GltCalc() {
                 type="number"
                 step="1000000000000"
                 defaultValue={500.496e11}
-                onChange={doCalc}/> meters (500 AU)</td>
+                onChange={doCalc}/> meters (e.g. 500 AU)</td>
         </tr>
         <tr>
-          <td>Θ<sub>1</sub></td>
+          <td>Deflection (Θ<sub>1</sub>)</td>
           <td><input
                 id="theta"
                 type="number"
                 defaultValue={1.75}
-                onChange={doCalc}/> arcseconds</td>
+                onChange={doCalc}/> arcseconds (Sun's deflection)</td>
         </tr>
         <tr>
           <td>tan(Θ)</td>
