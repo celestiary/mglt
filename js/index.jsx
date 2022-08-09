@@ -1,6 +1,7 @@
 import React from 'react'
-import {render} from 'react-dom'
+import {createRoot} from 'react-dom/client'
 import GltCalc from './GltCalc'
 
 
-render(<GltCalc/>, document.getElementById('root'))
+const root = createRoot(document.getElementById('root'))
+root.render(<GltCalc/>)
