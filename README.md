@@ -14,5 +14,10 @@ The Sun has a lens difraction of 1.73 arcseconds, which yields a focal length of
 
 A Multi-Gravitational Lense Telescope would combine the lensing from multiple objects to form a synthetic aperature.  So the task is to search for combinations of lenses that focus at a point somewhere in our Solar System.
 
+### Collimating Lens
+The light arriving at the telescope would need to be filtered to remove the starlight from the lensing source, leaving only the objective's light for collection.
+
+A related topic may be collimating lenses and their effectiveness.  Some lasers achieve beams that diverge from parallel less in ~arcminute range, or better for larger lasers.  See  https://en.wikipedia.org/wiki/Collimated_beam#Lasers
+
 ### Calculator
 The code in this repo is currently used for a WIP calculator at https://celestiary.github.io/mglt/
